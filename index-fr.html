@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" href="assets/turgeonwhite.png" />
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Site Web de Turgeon.Frames</title>
+        <style>
+            .floater-btn {
+                position: fixed;
+                bottom: 32px;
+                right: 32px;
+                z-index: 1000;
+                background: #222;
+                color: #fff;
+                border: none;
+                border-radius: 32px;
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+                font-weight: bold;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+                cursor: pointer;
+                transition: background 0.2s;
+            }
+            .floater-btn:hover {
+                background: #444;
+            }
+            .lang-switch {
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+                position: absolute;
+                right: 2rem;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 1100;
+            }
+            .lang-btn {
+                background: #111;
+                color: #fff;
+                border: 2px solid #fff;
+                border-radius: 24px;
+                padding: 0.5rem 1.5rem;
+                font-size: 1rem;
+                font-family: inherit;
+                font-weight: 600;
+                letter-spacing: 1px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+                transition: background 0.2s, color 0.2s, border 0.2s;
+                text-decoration: none;
+            }
+            .lang-btn:last-child {
+                background: #fff;
+                color: #111;
+                border: 2px solid #111;
+            }
+            @media (max-width: 900px) {
+                .lang-switch {
+                    position: fixed;
+                    top: 1rem;
+                    right: 1rem;
+                    transform: none;
+                    z-index: 2001;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Floating Language Switcher Button -->
+        <button id="lang-toggle-btn" class="lang-btn floater-btn" style="bottom: 96px;">EN</button>
+        <script>
+            // Simple language toggle between EN and FR
+            document.addEventListener('DOMContentLoaded', function() {
+                const btn = document.getElementById('lang-toggle-btn');
+                btn.textContent = 'EN';
+                btn.onclick = function() {
+                    window.location.href = 'index.html';
+                };
+            });
+        </script>
+        <!-- Floating Book Now Button -->
+        <a href="mailto:turgeon.frames@gmail.com?subject=Demande%20de%20réservation" class="floater-btn">Réserver</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScIH7Cekq3jOb_qlEJ_hj6LtF7cokarOpbuYGxafvfgBJCpVg/viewform" class="floater-btn" target="_blank" rel="noopener">Réserver</a>
+        <header class="header" id="home">
+            <nav>
+                <div class="nav__header">
+                    <div class="nav__logo">
+                        <a href="#">
+                            <img src="assets/turgeonwhite.png" alt="logo" />
+                        </a>
+                    </div>
+                    <div class="nav__menu__btn" id="menu-btn">
+                        <i class="ri-menu-line"></i>
+                    </div>
+                </div>
+                <ul class="nav__links" id="nav-links">
+                    <li><a href="#home">ACCUEIL</a></li>
+                    <li><a href="#about">À PROPOS</a></li>
+                    <li class="nav__logo">
+                        <a href="#">
+                            <img src="assets/turgeonwhite.png" alt="logo" />
+                        </a>
+                    </li>
+                    <li><a href="#service">SERVICES</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="section__container about__container" id="about">
+            <h2 class="section__header">À propos de Turgeon.Frames</h2>
+            <p class="section__description">
+                Turgeon.Frames, c'est la polyvalence — capturer la vie sous tous les angles. Que ce soit des sports rapides, de la photographie de rue, des portraits, des événements ou de la création de contenu, Gabriel Turgeon apporte un œil créatif et un style adaptable à chaque prise. Peu importe l'ambiance, l'objectif reste le même : des visuels propres et authentiques qui en disent plus que des mots.
+            </p>
+            <p class="section__description">
+                Gab n'est pas seulement derrière la caméra — il est aussi un travailleur hybride. Donc, si vous avez besoin de montage, de retouche ou de magie en post-production, c'est votre homme. Des prises brutes à la touche finale, Turgeon.Frames s'occupe de tout.
+            </p>
+            <img src="assets/turgeon.png" alt="logo" />
+            <div style="display: flex; justify-content: center; margin-top: 2rem;">
+                <a href="assets/Gabriel Turgeon Resume 1.pdf" download>
+                    <button class="btn">Télécharger le CV</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="section__container portfolio__container">
+            <h2 class="section__header">~ PORTFOLIO ~</h2>
+            <div class="portfolio__grid">
+                <div class="portfolio__card">
+                    <img src="assets/portfolio-1.jpg" alt="portfolio" />
+                    <div class="portfolio__content">
+                        <a href="https://turgeonframes.pic-time.com/-myfirstgallery" target="_blank">
+                            <button class="btn">VOIR LE PORTFOLIO</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="portfolio__card">
+                    <img src="assets/hockey.jpg" alt="portfolio" />
+                    <div class="portfolio__content">
+                        <a href="https://turgeonframes.pic-time.com/-myfirstgallery" target="_blank">
+                            <button class="btn">VOIR LE PORTFOLIO</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="portfolio__card">
+                    <img src="assets/me.jpg" alt="portfolio" />
+                    <div class="portfolio__content">
+                        <a href="https://turgeonframes.pic-time.com/-myfirstgallery" target="_blank">
+                            <button class="btn">VOIR LE PORTFOLIO</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="service" id="service">
+            <div class="section__container service__container">
+                <h2 class="section__header">~ SERVICES/TARIFS ~</h2>
+                <p class="section__description">
+                    Chez Turgeon.Frames, il s'agit de capturer les moments qui comptent. 
+                    Que ce soit pour une séance, un événement ou un projet créatif, 
+                    l'objectif est de livrer des visuels percutants — propres, authentiques 
+                    et pleins de personnalité. Chaque service est flexible et adapté à votre style, 
+                    avec un mélange de créativité, de qualité et de soin derrière chaque prise.<br>
+                    <strong>Note :</strong> Les prix indiqués sont pour des séances d'une heure et peuvent varier selon l'événement ou le projet.
+                </p>
+                <div class="service__grid">
+                    <div class="service__card">
+                        <h4>Séances photo</h4>
+                        <p>
+                            Chaque séance est construite autour de vous — votre style, votre énergie, votre ambiance. 
+                            Que ce soit décontracté, audacieux, créatif ou classique, 
+                            le but est de vous capturer de la manière la plus authentique et marquante possible.
+                            Les prix commencent à 90 $ pour une séance individuelle et 150 $ pour 2 personnes ou plus, 
+                            incluant des photos retouchées et une galerie privée en ligne pour partager et télécharger facilement.
+                        </p>
+                    </div>
+                    <div class="service__card">
+                        <h4>Séances vidéo</h4>
+                        <p>
+                            Capturez des moments en mouvement. Du montage narratif aux visuels cinématographiques, 
+                            chaque vidéo est conçue pour donner vie à votre vision — 
+                            que ce soit pour une marque, un événement ou simplement un souvenir à revivre en images.
+                            Les prix commencent à 100 $ par projet, incluant une vidéo entièrement montée avec coupes propres, 
+                            étalonnage des couleurs, audio synchronisé et un lien privé pour partager et télécharger facilement.
+                        </p>
+                    </div>
+                    <div class="service__card">
+                        <h4>Séances hybrides</h4>
+                        <p>
+                            Les photos figent un moment. Les vidéos le font revivre. Chez turgeon.frames, 
+                            vous avez le meilleur des deux mondes. Que ce soit un événement complet, un projet personnel 
+                            ou du contenu pour votre marque, les séances hybrides offrent un mélange de photographie de haute qualité et de vidéographie cinématographique 
+                            — le tout adapté à votre style.
+                            Les prix commencent à 120 $ pour un forfait hybride, incluant une séance photo complète, 
+                            une vidéo montée, des photos retouchées et une galerie privée ainsi qu'un lien vidéo 
+                            pour partager et télécharger facilement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section__container gallery__container">
+            <h2 class="section__header">~ GALERIE ~</h2>
+            <div class="gallery__grid">
+                <img src="assets/imagedisplay.jpg" alt="galerie" />
+                <img src="assets/imagedisplay2.jpg" alt="galerie" />
+                <img src="assets/imagedisplay3.jpg" alt="galerie" />
+                <img src="assets/imagedisplay4.jpg" alt="galerie" />
+                <img src="assets/imagedisplay7.jpg" alt="galerie" />
+                <img src="assets/imagedisplay6.jpg" alt="galerie" />
+                <img src="assets/imagedisplay5.jpg" alt="galerie" />
+                <img src="assets/imagedisplay8.jpg" alt="galerie" />
+            </div>
+            <div class="gallery__btn">
+                <a href="https://turgeonframes.pic-time.com/-myfirstgallery" target="_blank">
+                    <button class="btn">VOIR LA GALERIE</button>
+                </a>
+            </div>
+        </section>
+
+        <iframe id='pictimeIntegration' name='pictimeIntegration' src='https://turgeonframes.pic-time.com/testimonials?pictimeColumns=&cssurl=' style='width:100%;height:100%' onload="var script = document.createElement('script');  script.src = 'https://pictimecloudaf-pub-g3csanfebyefg3dm.a02.azurefd.net/pictures/scripts/iframeresize.js'; parentElement.append(script);" frameborder='0'></iframe>
+
+        <footer id="contact">
+            <div class="section__container footer__container">
+                <div class="footer__col">
+                    <img src="assets/turgeon.png" alt="logo" />
+                    <div class="footer__socials">
+                        <a href="https://www.facebook.com/profile.php?id=61577087897998&locale=fr_CA"><i class="ri-facebook-fill"></i></a>
+                        <a href="https://www.instagram.com/turgeon.frames/"><i class="ri-instagram-line"></i></a>
+                        <a href="https://www.tiktok.com/@turgeon.frames"><i class="ri-tiktok-fill"></i></a>
+                        <a href="https://www.youtube.com/@InternatioGab"><i class="ri-youtube-fill"></i></a>
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <ul class="footer__links">
+                        <li><a href="#home">ACCUEIL</a></li>
+                        <li><a href="#about">À PROPOS</a></li>
+                        <li><a href="#service">SERVICES</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>RESTEZ EN CONTACT</h4>
+                    <p>
+                        Restez à jour avec Turgeon.Frames ! Rejoignez ma communauté et 
+                        ne manquez jamais un moment ! Suivez-moi sur les réseaux sociaux pour les dernières nouvelles, les coulisses et plus encore.
+                    </p>
+                </div>
+            </div>
+            <div class="footer__bar">
+                Copyright 2025 © Turgeon.Frames. Tous droits réservés.
+            </div>
+        </footer>
+
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

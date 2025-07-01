@@ -1,21 +1,96 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="assets/turgeonwhite.png" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles.css" />
     <title>Turgeon.Frames's Website</title>
+    <style>
+      .floater-btn {
+        position: fixed;
+        bottom: 32px;
+        right: 32px;
+        z-index: 1000;
+        background: #222;
+        color: #fff;
+        border: none;
+        border-radius: 32px;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .floater-btn:hover {
+        background: #444;
+      }
+      /* Language switcher styles for navbar */
+      .lang-switch {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        position: absolute;
+        right: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1100;
+      }
+      .lang-btn {
+        background: #111;
+        color: #fff;
+        border: 2px solid #fff;
+        border-radius: 24px;
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+        font-family: inherit;
+        font-weight: 600;
+        letter-spacing: 1px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        transition: background 0.2s, color 0.2s, border 0.2s;
+        text-decoration: none;
+      }
+      .lang-btn:last-child {
+        background: #fff;
+        color: #111;
+        border: 2px solid #111;
+      }
+      @media (max-width: 900px) {
+        .lang-switch {
+          position: fixed;
+          top: 1rem;
+          right: 1rem;
+          transform: none;
+          z-index: 2001;
+        }
+      }
+    </style>
   </head>
   <body>
+    <!-- Floating Language Switcher Button -->
+    <button id="lang-toggle-btn" class="lang-btn floater-btn" style="bottom: 96px;">FR</button>
+    <script>
+      // Simple language toggle between EN and FR
+      document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.getElementById('lang-toggle-btn');
+        const isFrench = window.location.pathname.includes('index-fr');
+        btn.textContent = isFrench ? 'EN' : 'FR';
+        btn.onclick = function() {
+          if (isFrench) {
+            window.location.href = 'index.html';
+          } else {
+            window.location.href = 'index-fr.html';
+          }
+        };
+      });
+    </script>
+    <!-- Floating Book Now Button -->
+    <a href="mailto:turgeon.frames@gmail.com?subject=Booking%20Request" class="floater-btn">Book Now</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScIH7Cekq3jOb_qlEJ_hj6LtF7cokarOpbuYGxafvfgBJCpVg/viewform" class="floater-btn" target="_blank" rel="noopener">Book Now</a>
     <header class="header" id="home">
       <nav>
         <div class="nav__header">
@@ -51,14 +126,12 @@
         Gab’s not just behind the camera — he’s also a hybrid worker. So if you ever need editing, retouching, or post-production magic, he’s your guy. From raw shots to the final polish, Turgeon.Frames has you covered.
       </p>
       <img src="assets/turgeon.png" alt="logo" />
-    </div>
       <div style="display: flex; justify-content: center; margin-top: 2rem;">
         <a href="assets/Gabriel Turgeon Resume 1.pdf" download>
           <button class="btn">Download Resume</button>
         </a>
       </div>
-        </a>
-      </div>
+    </div>
 
     <div class="section__container portfolio__container">
       <h2 class="section__header">~ PORTFOLIO ~</h2>
@@ -98,8 +171,8 @@
           Whether it’s for a shoot, event, or creative project, 
           the goal is to deliver visuals that hit — clean, real, 
           and full of personality. Every service is flexible and tailored to your vibe, 
-            with a mix of creativity, quality, and care behind every shot.<br>
-            <strong>Note:</strong> Prices listed are for 1 hour sessions and may vary depending on the event or project details.
+          with a mix of creativity, quality, and care behind every shot.<br>
+          <strong>Note:</strong> Prices listed are for 1 hour sessions and may vary depending on the event or project details.
         </p>
         <div class="service__grid">
           <div class="service__card">
@@ -108,7 +181,6 @@
               Each session is built around you — your vibe, your energy, and your style. 
               Whether it's laid-back, bold, creative, or classic, 
               the goal is to capture you in the most real and striking way possible.
-
               Prices start at $90 for a single shoot and $150 for 2 or more people that comes
               with edited photos, and a private online gallery for easy sharing and downloading.
             </p>
@@ -119,7 +191,6 @@
               Capture moments that move. From storytelling edits to cinematic visuals, 
               every video is crafted to bring your vision to life — 
               whether it’s for a brand, an event, or just a memory you want to relive in motion.
-
               Prices start at $100 per project, which includes a fully edited video with clean cuts, 
               color grading, synced audio, and a private online link for easy sharing and downloading.
             </p>
@@ -131,7 +202,6 @@
               you get the best of both. Whether it’s a full event, a personal project, 
               or content for your brand, hybrid sessions offer a mix of high-quality photography and cinematic videography 
               — all tailored to your style.
-
               Prices start at $120 for a hybrid bundle, which includes a full photo shoot, 
               an edited video, edited photos, and a private online gallery and video link for 
               easy sharing and downloading.
@@ -159,6 +229,8 @@
         </a>
       </div>
     </section>
+
+    <iframe id='pictimeIntegration' name='pictimeIntegration' src='https://turgeonframes.pic-time.com/testimonials?pictimeColumns=&cssurl=' style='width:100%;height:100%' onload="var script = document.createElement('script');  script.src = 'https://pictimecloudaf-pub-g3csanfebyefg3dm.a02.azurefd.net/pictures/scripts/iframeresize.js'; parentElement.append(script);" frameborder='0'></iframe>
 
     <footer id="contact">
       <div class="section__container footer__container">

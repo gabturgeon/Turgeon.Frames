@@ -78,3 +78,22 @@ ScrollReveal().reveal(".blog__content .blog__btn", {
   ...scrollRevealOption,
   delay: 1500,
 });
+const testimonialSwiper = new Swiper(".testimonial-swiper", {
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 30,
+  pagination: {
+    el: ".testimonial-swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".testimonial-swiper-button-next",
+    prevEl: ".testimonial-swiper-button-prev",
+  },
+  autoplay: {
+    delay: 3000, // Changes slide every 3 seconds
+    disableOnInteraction: false,
+  },
+  effect: "slide",
+  direction: "horizontal",
+});
